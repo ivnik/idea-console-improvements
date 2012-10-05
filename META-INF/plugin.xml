@@ -1,0 +1,13 @@
+<idea-plugin version="2">
+    <name>ConsoleUtil</name>
+    <description><![CDATA[]]>
+    </description>
+    <version>0.12</version>
+    <vendor>nik</vendor>
+    <idea-version since-build="107.105"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <consoleFilterProvider implementation="ru.sofitlabs.ideaplugins.ConsoleUtilFilterProvider"/>
+        <!--<consoleFilterProvider implementation="ru.sofitlabs.ideaplugins.ColorifyConsoleFilterProvider"/>-->
+    </extensions>
+</idea-plugin>
