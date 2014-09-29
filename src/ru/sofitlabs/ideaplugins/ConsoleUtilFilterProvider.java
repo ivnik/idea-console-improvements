@@ -30,7 +30,7 @@ public class ConsoleUtilFilterProvider implements ConsoleFilterProvider {
 
         final Filter classnameFilter = new Filter() {
 //            private final Pattern classNamePattern = Pattern.compile("([\\p{Alpha}\\.\\$]+)(?::?\\[?(\\d+)\\]?)?");
-            private final Pattern classNamePattern = Pattern.compile("([\\p{Alpha}\\.\\$]+)(?:[:\\[\\]\\(\\)\\s]*(\\d+))?(?:[:\\[\\]\\(\\)\\s]*(\\d+))?[\\]\\)]?");
+            private final Pattern classNamePattern = Pattern.compile("([\\p{Alpha}\\.\\$]+)(?:[:\\[\\]\\(\\)\\s]*(\\d{1,6}))?(?:[:\\[\\]\\(\\)\\s]*(\\d{1,6}))?[\\]\\)]?");
 
             @Override
             public Result applyFilter(final String line, final int entireLength) {
@@ -105,7 +105,7 @@ public class ConsoleUtilFilterProvider implements ConsoleFilterProvider {
 
         public FileErrorFilter(Project project) {
             this.project = project;
-            checkstyleErrorPattern = Pattern.compile("^(?:\\[(?:ERROR)\\]\\s*)?((?:\\p{Alpha}\\:)?[0-9 a-z_A-Z\\-\\\\./]+):(\\d+)(?::(\\d+))?");
+            checkstyleErrorPattern = Pattern.compile("^(?:\\[(?:ERROR)\\]\\s*)?((?:\\p{Alpha}\\:)?[0-9 a-z_A-Z\\-\\\\./]+):(\\d{1,6})(?::(\\d{1,6}))?");
         }
 
         @Override
